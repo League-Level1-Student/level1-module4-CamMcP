@@ -34,7 +34,7 @@ import javax.swing.JPanel;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton;
+	private JButton thirdButton, fourthButton, fifthButton;
 	private JPanel quizPanel;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
@@ -55,24 +55,43 @@ frame.setVisible(true);
 frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 JPanel panel = new JPanel();
+
 		// 4. Add the header component to the quizPanel
+panel.add(createHeader("Math"));
 
 		// 5. Add the quizPanel to the frame
-
+frame.add(panel);
 		// 6. Use the createButton method to set the value of firstButton
+firstButton = createButton("$100");
 
 		// 7. Add the firstButton to the quizPanel
-
+panel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-
+secondButton = createButton("$200");
+panel.add(secondButton);
+thirdButton = createButton("$300");
+panel.add(thirdButton);
+fourthButton = createButton("$400");
+panel.add(fourthButton);
+fifthButton = createButton("$500");
+panel.add(fifthButton);
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
 
 		// 10. Add the secondButton to the quizPanel
 
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+firstButton.addActionListener(this);
+firstButton.setName("$100");
+secondButton.addActionListener(this);
+secondButton.setName("$200");
+thirdButton.addActionListener(this);
+thirdButton.setName("$300");
+fourthButton.addActionListener(this);
+fourthButton.setName("$400");
+fifthButton.addActionListener(this);
+fifthButton.setName("$500");
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -110,7 +129,21 @@ JPanel panel = new JPanel();
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-
+if (buttonPressed.equals(firstButton)) {
+	askQuestion("7 - 3 * 3 = ?", "-2", 100);
+}
+else if (buttonPressed.equals(thirdButton)) {
+	askQuestion("1/2 + 3/4 * 2/5 = ?", "16/20", 300);
+}
+else if (buttonPressed.equals(secondButton)) {
+	askQuestion("1.2 * 5 / 3 = ?", "2", 200);
+}
+else if (buttonPressed.equals(fourthButton)) {
+	askQuestion("(8 to the power of 2 - 1) / 9" , "7", 400);
+}
+else if (buttonPressed.equals(fifthButton)) {
+	askQuestion(question, correctAnswer, 500);
+}
 			// Call the askQuestion() method
  
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
@@ -128,18 +161,26 @@ JPanel panel = new JPanel();
 		// Use the playJeopardyTheme() method to play music while the use thinks of an answer
 		
 		// Remove this temporary message and replace it with a pop-up that asks the user the question
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
-		
+		JOptionPane.showMessageDialog(null, "Here is your question! " + question + " This is also a reminder to not put a 'what is' before your answer.");
+		String answer = JOptionPane.showInputDialog("Enter the answer below!");
 		// Stop the theme music when they have entered their response. Hint: use the sound variable 
 		
 		// If the answer is correct
-
+if (answer.equals(correctAnswer)) {
+	JOptionPane.showMessageDialog(null, "You are correct!");
+	score = score + prizeMoney;
+	updateScore();
+}
 			// Increase the score by the prizeMoney
 
 			// Pop up a message to tell the user they were correct
 
 		// Otherwise
-
+else {
+	JOptionPane.showMessageDialog(null, "That is unfortunately incorrect.");
+	score = score - prizeMoney;
+	updateScore();
+}
 			// Decrement the score by the prizeMoney
 
 			// Pop up a message to tell the user they were wrong and give them the correct answer
