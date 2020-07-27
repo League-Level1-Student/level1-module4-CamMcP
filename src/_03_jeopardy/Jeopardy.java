@@ -139,10 +139,10 @@ else if (buttonPressed.equals(secondButton)) {
 	askQuestion("1.2 * 5 / 3 = ?", "2", 200);
 }
 else if (buttonPressed.equals(fourthButton)) {
-	askQuestion("(8 to the power of 2 - 1) / 9" , "7", 400);
+	askQuestion("if x = 35, then what does x3 / 5 * 2 to the power of 2 - 71 equal?", "29", 400);
 }
 else if (buttonPressed.equals(fifthButton)) {
-	askQuestion(question, correctAnswer, 500);
+	askQuestion("(8 to the power of 2 - 1) / 9 = ?" , "7", 500);
 }
 			// Call the askQuestion() method
  
