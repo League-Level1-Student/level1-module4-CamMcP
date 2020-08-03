@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 public class L_A_U_G_H implements ActionListener{
 public static void main(String[] args) {
-makeButton();
+new L_A_U_G_H().makeButton();
 }
 private void makeButton() {
 JFrame A = new JFrame();
@@ -22,6 +22,9 @@ AAA.setText("Joke");
 AAA.addActionListener(this);
 AAAA.setText("Punchline");
 AAAA.addActionListener(this);
+if () {
+	
+}
 AA.add(AAA);
 AA.add(AAAA);
 A.add(AA);
