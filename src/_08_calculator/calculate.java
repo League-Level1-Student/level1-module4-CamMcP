@@ -9,7 +9,7 @@ import com.sun.org.apache.bcel.internal.classfile.Field;
 public class calculate implements Runnable {
 	int one = 0;
 	int two = 0;
-	int answer = 0;
+	int answer = 0; 
 public static void main(String[] args) {
 	JButton add = new JButton();
 	JButton sub = new JButton();
