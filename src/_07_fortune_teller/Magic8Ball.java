@@ -14,7 +14,18 @@ public static void main(String[] args) {
 	
 	int rand = new Random().nextInt(4);
 	System.out.println(rand);
-	JOptionPane.showInputDialog("The Fortune Teller couldn't here you. Could you say your question again?");
+	if (rand == 0) {
+		JOptionPane.showMessageDialog(null, "Yes");
+	}
+	if (rand == 1) {
+		JOptionPane.showMessageDialog(null, "No");
+	}
+	if (rand == 2) {
+		JOptionPane.showMessageDialog(null, "Maybe you should ask google?");
+	}
+	if (rand == 3) {
+		JOptionPane.showMessageDialog(null, "Write your own answer, dummy");
+	}
 }
 	// 1. Make a main method that includes all the steps below….
 

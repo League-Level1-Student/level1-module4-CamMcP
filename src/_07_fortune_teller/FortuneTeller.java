@@ -59,7 +59,20 @@ JOptionPane.showInputDialog("Enter a yes or no question for the fortune teller")
    		 // 11. Use the pause() method below to wait until your music has finished
 
    		 // 12. Insert your completed Magic 8 ball code here
-
+int rand = new Random().nextInt(4);
+System.out.println(rand);
+if (rand == 0) {
+	JOptionPane.showMessageDialog(null, "Yes");
+}
+if (rand == 1) {
+	JOptionPane.showMessageDialog(null, "No");
+}
+if (rand == 2) {
+	JOptionPane.showMessageDialog(null, "Maybe you should ask google?");
+}
+if (rand == 3) {
+	JOptionPane.showMessageDialog(null, "Write your own answer, dummy");
+}
    	 }
 
     }
