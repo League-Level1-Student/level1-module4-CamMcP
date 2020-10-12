@@ -91,7 +91,7 @@ public class Wack implements ActionListener {
 			frame.setVisible(true);
 			hits = hits + 1;
 			if (hits == 10) {
-				endGame(timeAtStart, 10);
+				endGame(timeAtStart, hits);
 			}
 			}
 	
