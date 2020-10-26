@@ -144,12 +144,15 @@ public void actionPerformed(ActionEvent arg0){
 	}
 	if (image == 0 && Image == 0 & IMage == 0) {
 		JOptionPane.showMessageDialog(null, "You win!");
+		System.exit(0);
 	}
 	if (image == 1 && Image == 1 & IMage == 1) {
 		JOptionPane.showMessageDialog(null, "You win!");
+		System.exit(0);
 	}
 	if (image == 2 && Image == 2 & IMage == 2) {
 		JOptionPane.showMessageDialog(null, "You win!");
+		System.exit(0);
 	}
 }
 }
