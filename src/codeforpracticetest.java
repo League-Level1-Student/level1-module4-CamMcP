@@ -29,6 +29,7 @@ button1.addActionListener(this);
 button2.addActionListener(this);
 frame.pack();
 }
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
